@@ -10,32 +10,32 @@ public class MainViewModel extends ViewModel {
     /* **********************************************************************
      * Variable
      ********************************************************************** */
-    private List<Tab> tabs = null;
+    private List<Tab> tabs;
 
     {
         tabs = Arrays.asList(
                 new Tab(
                         Type.HOME,
                         R.string.home,
-                        R.drawable.ic_home,
+                        R.drawable.ic_home_selector,
                         null
                 ),
                 new Tab(
                         Type.PRODUCT,
                         R.string.product,
-                        R.drawable.ic_product,
+                        R.drawable.ic_product_selector,
                         null
                 ),
                 new Tab(
                         Type.FAVORITE,
                         R.string.favorite,
-                        R.drawable.ic_favorite,
+                        R.drawable.ic_favorite_selector,
                         null
                 ),
                 new Tab(
                         Type.SETTING,
                         R.string.setting,
-                        R.drawable.ic_setting,
+                        R.drawable.ic_setting_selector,
                         null
                 )
         );

@@ -29,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         MainAdapter adapter = new MainAdapter(tabs, this);
         binding.viewpager.setAdapter(adapter);
         new TabLayoutMediator(binding.navigation, binding.viewpager, (tab, position) -> {
-            tab.setText(getResources().getString(tabs.get(position).title));
-
-            // Set the icon property
             tab.setIcon(getResources().getDrawable(tabs.get(position).icon));
         }).attach();
         binding.viewpager.setUserInputEnabled(false);
@@ -44,10 +41,12 @@ public class MainActivity extends AppCompatActivity {
                     binding.navigation.selectTab(binding.navigation.getTabAt(position));
                 }
             }
+
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
             }
+
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
