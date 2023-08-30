@@ -1,0 +1,76 @@
+package com.example.prm_project.activity.login;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.prm_project.R;
+import com.example.prm_project.activity.main.MainActivity;
+import com.example.prm_project.databinding.ActivityLoginBinding;
+import com.google.android.material.snackbar.Snackbar;
+import com.parse.Parse;
+import com.parse.ParseUser;
+
+public class LoginActivity extends AppCompatActivity {
+    ActivityLoginBinding binding;
+    public static String USER_FILE_NAME = "User";
+    public static String NAME_KEY = "username";
+    public static String PASS_KEY = "password";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        SharedPreferences modePreferences = getSharedPreferences(USER_FILE_NAME, Context.MODE_PRIVATE);
+        String saveUsername = modePreferences.getString(NAME_KEY, "000");
+        String savePassword = modePreferences.getString(PASS_KEY, "000");
+        if (!saveUsername.equals("000") && !savePassword.equals("000")) {
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
+        } else {
+            binding = ActivityLoginBinding.inflate(getLayoutInflater());
+            setContentView(binding.getRoot());
+            EditText userNameEdt = binding.idEdtUserName;
+            EditText passwordEdt = binding.idEdtPassword;
+
+            binding.idBtnLogin.setOnClickListener(v -> {
+                String userName = userNameEdt.getText().toString();
+                String password = passwordEdt.getText().toString();
+
+                if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(LoginActivity.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
+                } else {
+                    loginUser(userName, password);
+                }
+                loginUser(userName, password);
+            });
+        }
+    }
+
+    private void loginUser(String userName1, String password1) {
+        SharedPreferences modePreferences = getSharedPreferences(USER_FILE_NAME, Context.MODE_PRIVATE);
+        String saveUsername = modePreferences.getString(NAME_KEY, "123");
+        String savePassword = modePreferences.getString(PASS_KEY, "123");
+        if (userName1 != null && password1 != null && userName1.equals(saveUsername) && password1.equals(savePassword)) {
+
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            i.putExtra("username", userName1);
+            modePreferences.edit().putString(NAME_KEY, userName1).apply();
+            modePreferences.edit().putString(PASS_KEY, password1).apply();
+            startActivity(i);
+            finish();
+        } else {
+//            ParseUser.logOut();
+            Toast.makeText(LoginActivity.this, "làm lại đi", Toast.LENGTH_LONG).show();
+        }
+    }
+}

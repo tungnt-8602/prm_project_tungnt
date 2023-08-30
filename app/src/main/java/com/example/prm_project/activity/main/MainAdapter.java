@@ -1,4 +1,4 @@
-package com.example.prm_project;
+package com.example.prm_project.activity.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.prm_project.fragment.FavoriteFragment;
-import com.example.prm_project.fragment.HomeFragment;
+import com.example.prm_project.fragment.home.HomeFragment;
 import com.example.prm_project.fragment.ProductFragment;
 import com.example.prm_project.fragment.SettingFragment;
 

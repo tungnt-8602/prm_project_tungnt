@@ -1,4 +1,4 @@
-package com.example.prm_project;
+package com.example.prm_project.activity.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;

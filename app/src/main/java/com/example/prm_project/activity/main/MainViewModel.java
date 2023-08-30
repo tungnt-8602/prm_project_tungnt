@@ -1,7 +1,9 @@
-package com.example.prm_project;
+package com.example.prm_project.activity.main;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
+
+import com.example.prm_project.R;
 
 import java.util.Arrays;
 import java.util.List;
