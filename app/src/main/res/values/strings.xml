@@ -9,4 +9,10 @@
     <string name="brand_describe">Thời trang nam</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBhTaU972-vgJQrUsvnD1we-jcXdrDvezs</string>
+    <string name="title_login_form">Chào mừng đến với Coolmate \n Đăng nhập</string>
+    <string name="hint_username_login">Tên tài khoản</string>
+    <string name="hint_password_login">Mật khẩu</string>
+    <string name="content_des_chat">Đến tin nhắn</string>
+    <string name="content_des_cart">Đến giỏ hàng</string>
+    <string name="content_des_logo">Logo Coolmate</string>
 </resources>

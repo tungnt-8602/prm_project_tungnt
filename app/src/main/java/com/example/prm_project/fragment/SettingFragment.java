@@ -5,21 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import com.example.prm_project.R;
 import com.example.prm_project.activity.login.LoginActivity;
 import com.example.prm_project.activity.map.MapsActivity;
-import com.example.prm_project.R;
-import com.google.android.material.snackbar.Snackbar;
 
 public class SettingFragment extends Fragment {
 
@@ -51,7 +48,7 @@ public class SettingFragment extends Fragment {
         });
         TextView username = view.findViewById(R.id.username);
         TextView email = view.findViewById(R.id.email);
-        String usn = requireActivity().getIntent().getStringExtra("username");
+        String usn = modePreferences.getString(NAME_KEY, "123");
         username.setText(usn);
         email.setText(usn + "@gmail.com");
         view.findViewById(R.id.logout_btn).setOnClickListener(new View.OnClickListener() {

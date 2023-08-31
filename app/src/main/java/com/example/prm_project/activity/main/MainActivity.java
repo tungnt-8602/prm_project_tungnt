@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import com.example.prm_project.R;
 import com.example.prm_project.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -17,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private MainViewModel viewModel;
 
-
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        getWindow().setStatusBarColor(getColor(R.color.transparent));
         setContentView(binding.getRoot());
         List<MainViewModel.Tab> tabs = viewModel.getTabs();
         MainAdapter adapter = new MainAdapter(tabs, this);

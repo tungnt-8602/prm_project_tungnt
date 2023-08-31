@@ -6,6 +6,10 @@ plugins {
 android {
     namespace 'com.example.prm_project'
     compileSdk 33
+    useLibrary 'android.test.runner'
+
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
 
     defaultConfig {
         applicationId "com.example.prm_project"

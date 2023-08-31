@@ -1,6 +1,6 @@
 package com.example.prm_project.fragment.home;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +19,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
     private final List<SliderData> mSliderItems;
 
     // Constructor
-    public SliderAdapter(Context context, ArrayList<SliderData> sliderDataArrayList) {
+    public SliderAdapter(ArrayList<SliderData> sliderDataArrayList) {
         this.mSliderItems = sliderDataArrayList;
     }
 
@@ -27,6 +27,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
     // inside on Create View Holder method.
     @Override
     public SliderAdapterViewHolder onCreateViewHolder(ViewGroup parent) {
+        @SuppressLint("InflateParams")
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_slider, null);
         return new SliderAdapterViewHolder(inflate);
     }
@@ -61,7 +62,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
         public SliderAdapterViewHolder(View itemView) {
             super(itemView);
-            imageViewBackground = itemView.findViewById(R.id.myimage);
+            imageViewBackground = itemView.findViewById(R.id.my_image);
             this.itemView = itemView;
         }
     }
