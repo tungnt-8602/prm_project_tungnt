@@ -39,13 +39,6 @@ public class SettingFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         SharedPreferences modePreferences = requireActivity().getSharedPreferences(USER_FILE_NAME, Context.MODE_PRIVATE);
-        view.findViewById(R.id.location).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(requireActivity(), MapsActivity.class);
-                startActivity(intent);
-            }
-        });
         TextView username = view.findViewById(R.id.username);
         TextView email = view.findViewById(R.id.email);
         String usn = modePreferences.getString(NAME_KEY, "123");

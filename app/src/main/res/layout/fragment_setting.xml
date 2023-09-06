@@ -539,34 +539,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/location_topic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/bg_setting_topic"
-            android:paddingHorizontal="16dp"
-            app:layout_constraintTop_toBottomOf="@id/order_topic1">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="8dp"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/location_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Địa chỉ store"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <Button
             android:id="@+id/logout_btn"
             android:layout_width="match_parent"
@@ -575,7 +547,7 @@
             android:backgroundTint="@color/bluer"
             android:text="Đăng xuất"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/location_topic" />
+            app:layout_constraintTop_toBottomOf="@id/order_topic1" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fake_view"

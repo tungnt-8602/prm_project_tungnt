@@ -1,8 +1,9 @@
 package com.example.prm_project;
 
-import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.Test;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
