@@ -1,10 +1,15 @@
 package com.example.prm_project.activity.main;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.prm_project.R;
 import com.example.prm_project.databinding.ActivityMainBinding;
@@ -25,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
         getWindow().setStatusBarColor(getColor(R.color.transparent));
         setContentView(binding.getRoot());
+        binding.logo.setOnClickListener(v -> {
+            String url = "https://www.coolmate.me/";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        });
         List<MainViewModel.Tab> tabs = viewModel.getTabs();
         MainAdapter adapter = new MainAdapter(tabs, this);
         binding.viewpager.setAdapter(adapter);

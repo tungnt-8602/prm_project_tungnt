@@ -50,18 +50,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initSlider();
-        Log.d("ntt", "onClick: map");
-        CardView map = binding.cardMap;
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("ntt", "onClick: map click");
-                Intent intent = new Intent(requireActivity(), MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-        String imageUrl = "https://mcdn.coolmate.me/uploads/April2022/Screen_Shot_2022-03-29_at_17.25_1.png";
-        Picasso.get().load(imageUrl).into(binding.storyPic);
+        initCard();
     }
 
     private void initSlider() {
@@ -84,6 +73,27 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         sliderView.setScrollTimeInSec(3);
         sliderView.setAutoCycle(true);
         sliderView.startAutoCycle();
+    }
+
+    private void initCard(){
+        Log.d("ntt", "onClick: map");
+        CardView map = binding.cardMap;
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("ntt", "onClick: map click");
+                Intent intent = new Intent(requireActivity(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+        String imageUrl1 = "https://mcdn.coolmate.me/uploads/April2022/Screen_Shot_2022-03-29_at_17.25_1.png";
+        Picasso.get().load(imageUrl1).into(binding.storyPic);
+
+        String imageUrl2 = "https://mcdn.coolmate.me/uploads/April2022/1-8_14.jpg";
+        Picasso.get().load(imageUrl2).into(binding.storyPic1);
+
+        String imageUrl3 = "https://mcdn.coolmate.me/uploads/December2021/3_(1)_1_(1).jpg";
+        Picasso.get().load(imageUrl3).into(binding.storyPic2);
     }
 
     @Override
