@@ -3,6 +3,7 @@ package com.example.prm_project.activity.login;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.EditText;
@@ -23,10 +24,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_PRM_Project);
         SharedPreferences modePreferences = getSharedPreferences(USER_FILE_NAME, Context.MODE_PRIVATE);
         String saveUsername = modePreferences.getString(NAME_KEY, "000");
         String savePassword = modePreferences.getString(PASS_KEY, "000");
-        getWindow().setStatusBarColor(getColor(R.color.transparent));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().setStatusBarColor(getColor(R.color.transparent));
+        }
         if (!saveUsername.equals("000") && !savePassword.equals("000")) {
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);

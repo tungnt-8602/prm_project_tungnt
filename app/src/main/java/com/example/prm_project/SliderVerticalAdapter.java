@@ -1,4 +1,4 @@
-package com.example.prm_project.fragment.home;
+package com.example.prm_project;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -7,19 +7,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.prm_project.R;
+import com.example.prm_project.fragment.home.SliderData;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterViewHolder> {
+public class SliderVerticalAdapter extends SliderViewAdapter<SliderVerticalAdapter.SliderAdapterViewHolder> {
 
     // list for storing urls of images.
     private final List<SliderData> mSliderItems;
 
     // Constructor
-    public SliderAdapter(ArrayList<SliderData> sliderDataArrayList) {
+    public SliderVerticalAdapter(ArrayList<SliderData> sliderDataArrayList) {
         this.mSliderItems = sliderDataArrayList;
     }
 
@@ -28,7 +28,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
     @Override
     public SliderAdapterViewHolder onCreateViewHolder(ViewGroup parent) {
         @SuppressLint("InflateParams")
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_slider, null);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_slider_vertical, null);
         return new SliderAdapterViewHolder(inflate);
     }
 
@@ -54,7 +54,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
         return mSliderItems.size();
     }
 
-    static class SliderAdapterViewHolder extends SliderViewAdapter.ViewHolder {
+    static class SliderAdapterViewHolder extends ViewHolder {
         // Adapter class for initializing
         // the views of our slider view.
         View itemView;

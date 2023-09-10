@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.example.prm_project.R;
 import com.example.prm_project.databinding.ActivityMainBinding;
@@ -26,16 +27,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+        );
+        setTheme(R.style.Theme_PRM_Project);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        getWindow().setStatusBarColor(getColor(R.color.transparent));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().setStatusBarColor(getColor(R.color.transparent));
+        }
         setContentView(binding.getRoot());
-        binding.logo.setOnClickListener(v -> {
-            String url = "https://www.coolmate.me/";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            startActivity(i);
-        });
         List<MainViewModel.Tab> tabs = viewModel.getTabs();
         MainAdapter adapter = new MainAdapter(tabs, this);
         binding.viewpager.setAdapter(adapter);

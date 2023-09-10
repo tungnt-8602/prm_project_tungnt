@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activity.login.LoginActivity">
 
     <TextView
@@ -29,6 +30,8 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:hint="@string/hint_username_login"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/black"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@id/idTVHeader" />
 
@@ -42,6 +45,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:hint="@string/hint_password_login"
+        android:textColorHint="@color/light_black"
+        android:backgroundTint="@color/light_black"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/idEdtUserName" />
 
@@ -56,6 +61,7 @@
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/black"
         android:text="Login"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@id/idEdtPassword" />
 

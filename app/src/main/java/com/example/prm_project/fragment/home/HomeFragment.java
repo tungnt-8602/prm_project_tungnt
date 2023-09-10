@@ -1,7 +1,6 @@
 package com.example.prm_project.fragment.home;
 
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import com.example.prm_project.R;
 import com.example.prm_project.activity.map.MapsActivity;
 import com.example.prm_project.databinding.FragmentHomeBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -67,7 +65,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         for (String imageItem : imageSlider) {
             sliderDataArrayList.add(new SliderData(imageItem));
         }
-        SliderAdapter adapter = new SliderAdapter(sliderDataArrayList);
+        SliderHorizontalAdapter adapter = new SliderHorizontalAdapter(sliderDataArrayList);
         sliderView.setAutoCycleDirection(SliderView.LAYOUT_DIRECTION_LTR);
         sliderView.setSliderAdapter(adapter);
         sliderView.setScrollTimeInSec(3);

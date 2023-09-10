@@ -16,9 +16,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.prm_project.R;
 import com.example.prm_project.activity.login.LoginActivity;
-import com.example.prm_project.activity.map.MapsActivity;
+import com.example.prm_project.databinding.FragmentSettingBinding;
+public class SettingFragment extends Fragment{
 
-public class SettingFragment extends Fragment {
+    FragmentSettingBinding binding;
 
     public static String USER_FILE_NAME = "User";
     public static String NAME_KEY = "username";
@@ -31,7 +32,8 @@ public class SettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        binding = FragmentSettingBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @SuppressLint("SetTextI18n")
@@ -39,12 +41,12 @@ public class SettingFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         SharedPreferences modePreferences = requireActivity().getSharedPreferences(USER_FILE_NAME, Context.MODE_PRIVATE);
-        TextView username = view.findViewById(R.id.username);
-        TextView email = view.findViewById(R.id.email);
+        TextView username = binding.username;
+        TextView email = binding.email;
         String usn = modePreferences.getString(NAME_KEY, "123");
         username.setText(usn);
         email.setText(usn + "@gmail.com");
-        view.findViewById(R.id.logout_btn).setOnClickListener(new View.OnClickListener() {
+        binding.logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 modePreferences.edit().putString(NAME_KEY, null).apply();

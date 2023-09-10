@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.prm_project.ProductDetailFragment;
 import com.example.prm_project.fragment.FavoriteFragment;
 import com.example.prm_project.fragment.home.HomeFragment;
 import com.example.prm_project.fragment.ProductFragment;
