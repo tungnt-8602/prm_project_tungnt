@@ -1,4 +1,4 @@
-package com.example.prm_project;
+package com.example.prm_project.fragment.product;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.prm_project.ColorAdapter;
+import com.example.prm_project.SliderVerticalAdapter;
 import com.example.prm_project.databinding.LayoutProductBinding;
 import com.example.prm_project.fragment.home.SliderHorizontalAdapter;
 import com.example.prm_project.fragment.home.SliderData;

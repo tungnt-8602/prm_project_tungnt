@@ -1,6 +1,7 @@
 package com.example.prm_project.fragment.home;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -49,6 +50,11 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState);
         initSlider();
         initCard();
+        binding.logo.setOnClickListener(v -> {
+            Uri uri = Uri.parse("https://www.coolmate.me/"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
     }
 
     private void initSlider() {
