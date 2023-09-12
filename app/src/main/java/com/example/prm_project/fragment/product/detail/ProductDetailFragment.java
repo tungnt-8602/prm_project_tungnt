@@ -1,4 +1,4 @@
-package com.example.prm_project.fragment.product;
+package com.example.prm_project.fragment.product.detail;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
